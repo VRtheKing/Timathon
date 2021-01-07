@@ -17,7 +17,7 @@ body{
 nav {
   height: 10vh;
   width: 100%;
-  background: #415DF8; /*#2f3136;*/
+  background: #415DF8; /*#2f3136;*//* i think this suites #3b4061 */
 }
 nav ul {
   float: right;
