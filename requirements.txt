@@ -1,7 +1,5 @@
 alabaster==0.7.12
-anaconda-client==1.7.2
-anaconda-navigator==1.10.0
-anaconda-project==0.8.3
+
 appier==1.21.2
 argh==0.26.2
 argon2-cffi @ file:///tmp/build/80754af9/argon2-cffi_1596828493937/work
