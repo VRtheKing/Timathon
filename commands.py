@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import speak
 from youtube3 import YoutubeClient 
-from pywhatkit import playonyt
+from pywhatkit import playonyt, search
 from datetime import datetime
 
 now = datetime.now()
@@ -38,8 +38,8 @@ class speak_commands():
             if 'hello' in x:
                 speak.speak('hello, What can i do for you')
             
-            elif 'play' in x:
-                x = self.command.replace('new play','')
+            elif 'youtube' in x:
+                x = self.command.replace('new youtube','')
                 play = 'playing'+ x
                 print(play)
                 speak.speak(play)
@@ -47,6 +47,14 @@ class speak_commands():
             elif 'time' in x:
                 current_time = now.strftime("%H:%M")
                 speak.speak("Current Time is" + current_time)
+            
+            elif 'search' in x:
+                x = self.command.replace('new search','')
+                searching = 'searching' + x
+                print(searching)
+                speak.speak(searching)
+                search(x)
+
         
     def playonyt(self,vid):
         playonyt(vid)
