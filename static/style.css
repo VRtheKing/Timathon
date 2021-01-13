@@ -17,11 +17,8 @@ body{
 nav {
   height: 10vh;
   width: 100%;
-<<<<<<< HEAD
   background: #2f3136;
-=======
-  background: #415DF8; /*#2f3136;*//* i think this suites #3b4061 */
->>>>>>> b082589cc14405b799510ae64911aa89b2c5b925
+  /*background: #415DF8;*/ /*#2f3136;*//* i think this suites #3b4061 */
 }
 nav ul {
   float: right;
@@ -55,3 +52,13 @@ ul a {
 	top: 35%;
 	left: 20%;
 }
+.fontt{
+	display: flex;
+	flex-position: column;
+	position: fixed;
+	width: auto;
+	height: auto;
+	top: 37%;
+	left: 65%;
+}
+
