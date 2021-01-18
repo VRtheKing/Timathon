@@ -1,15 +1,18 @@
 import speech_recognition as sr
 import speak
 from youtube3 import YoutubeClient 
-from pywhatkit import playonyt, search
+
 from datetime import datetime
-
-now = datetime.now()
-
 import pyautogui
 
 pyautogui.moveTo(100, 200)
 pyautogui.moveTo(200, 300)
+
+from pywhatkit import playonyt, search
+
+now = datetime.now()
+
+
 listener = sr.Recognizer()
 
 #take_commands area
