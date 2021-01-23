@@ -22,8 +22,20 @@
         </li>
       </ul>
     </header>
-	<!-- <img src= "../static/digital.jpg" class="bgimg"> -->
-	<img src="../static/mic.png" height="300" width="250" class="mic">
-	<img src="../static/fontT.png" height="300" width="250" class="fontt">
+	<div id="popupmic" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<img src="../static/mic.png" height="250" width="250" class="inPopmic">
+		</div>
+	</div>
+	<div id="popuptext" class="modal">
+		<div class="modal-content">
+			<span class="closee">&times;</span>
+			<input type="text" value="Type here: " class="inPoptext">
+		</div>
+	</div>
+	<img src="../static/mic.png" height="300" width="250" class="mic" id="mike">
+	<img src="../static/fontT.png" height="300" width="250" class="fontt" id="texty">
+	<script src="../static/script.js"></script>
 </body>
 </html>
