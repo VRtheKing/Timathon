@@ -20,6 +20,17 @@ def searchonyt(x):
 def searchongoogle(x):
     return webbrowser.open(f'https://www.google.com/search?q={x}')
 
-x = input('what we should search on google: ')
-x = x.replace(' ' ,'+')
-searchongoogle(x)
+#x = x.replace(' ' ,'+')
+#searchongoogle(x)
+def start(x):
+    if 'search' in x:
+        x = x.replace('search','')
+        searchongoogle(x)
+
+    elif 'youtube' in x:
+        x = x.replace('youtube','')
+        searchonyt(x)
+
+    elif 'stack' in x:
+        x = x.replace('stack', '')
+        searchstack(x)
