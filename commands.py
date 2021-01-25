@@ -34,39 +34,33 @@ class speak_commands():
     def __init__(self,command):
         self.command = command
 
-        if 'new' in self.command:
-            x = self.command.replace('new','')
-            print(x)
 
-            if 'hello' in x:
-                speak.speak('hello, What can i do for you')
 
-            elif 'youtube' in x:
-                x = self.command.replace('new youtube','')
-                play = 'playing'+ x
-                print(play)
-                speak.speak(play)
-                self.playonyt(x)
-            elif 'time' in x:
-                current_time = now.strftime("%H:%M")
-                speak.speak("Current Time is" + current_time)
+        if 'youtube' in x:
+            x = self.command.replace('youtube','')
+            play = 'playing'+ x
+            print(play)
+            speak.speak(play)
+            self.playonyt(x)
+        elif 'time' in x:
+            current_time = now.strftime("%H:%M")
+            speak.speak("Current Time is" + current_time)
 
-            elif 'search' in x:
-                x = self.command.replace('new search','')
-                searching = 'searching' + x
-                print(searching)
-                speak.speak(searching)
-                search(x)
-
-            elif 'wiki' in x:
-                x = self.commands.replace('new wiki', '')
-                print(wikipedia.summary(x, sentences = 3))
-                speak.speak(wikipedia.summary(x, sentences = 3))
+        elif 'search' in x:
+            x = self.command.replace('search','')
+            searching = 'searching' + x
+            print(searching)
+            speak.speak(searching)
+            search(x)
+        elif 'Wikipedia' in x:
+            x = self.command.replace('Wikipedia', '')
+            try:
+                ans = wikipedia.summary(x, sentences = 3)
+                print(ans)
+                speak.speak(ans)
+            except:
+                speak.speak('retry')
 
 
     def playonyt(self,vid):
         playonyt(vid)
-
-
-command = take_commands()
-speak_command = speak_commands(command)
