@@ -1,8 +1,10 @@
 from flask import Flask, redirect, url_for, render_template, request
 import backend_api
 import commands
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+run_with_ngrok(app)
 
 @app.route("/", methods=['POST','GET'])
 def home():
@@ -18,4 +20,4 @@ def speak():
 	return True
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run()
