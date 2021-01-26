@@ -33,6 +33,7 @@ def take_commands():
 class speak_commands():
     def __init__(self,command):
         self.command = command
+        x = command
 
 
 
@@ -55,7 +56,7 @@ class speak_commands():
         elif 'Wikipedia' in x:
             x = self.command.replace('Wikipedia', '')
             try:
-                ans = wikipedia.summary(x, sentences = 3)
+                ans = wikipedia.summary(x, sentences = 1)
                 print(ans)
                 speak.speak(ans)
             except:
