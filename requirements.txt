@@ -1,6 +1,5 @@
 Flask
 requests
-webbrowser
 BeautifulSoup
 youtube3
 datetime
