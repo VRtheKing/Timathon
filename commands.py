@@ -13,7 +13,7 @@ now = datetime.now()
 #speak_commands
 class speak_commands():
     def speak(self, command):
-        command =command
+        command = command
         x = command
         if 'YouTube' in x:
             x = command.replace('YouTube','')
