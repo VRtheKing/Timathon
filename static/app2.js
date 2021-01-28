@@ -43,9 +43,8 @@ Recognition.onresult = function(event){
   const transcript = event.results[current][0].transcript;
   if (transcript.includes('time') == true){
     var d = new Date();
-    var time = d.getHours() + ' : ' + d.getMinutes();
+    var time =  d.getHours() + ' : ' + d.getMinutes();
     console.log('The current time is ' + time);
-    modal.style.display = "none";
     read('The current time is ' + time)
   }
   else{
@@ -99,5 +98,6 @@ speech.text = mess;
 speech.volume = 1;
 speech.pitch = 1;
 speech.rate = 1;
+window.speechSynthesis.cancel();
 window.speechSynthesis.speak(speech)
 }
