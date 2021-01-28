@@ -159,3 +159,22 @@ button, input[type="submit"], input[type="reset"] {
 	top: 80%;
 	left: 57%;
 }
+#about {
+	background: #FFFFFF;
+	padding-top: 12rem;
+	padding-bottom: 15rem;
+}
+#about .section-intro {
+	margin-bottom: 3rem;
+}
+
+.intro-info {
+	position: relative;
+	margin-top: 3.8rem;
+	margin-right: -30px;
+	margin-left: -25px;
+}
+.intro-info .lead {
+	text-align: left;
+	padding-left: 8rem;
+}
