@@ -6,6 +6,7 @@
 body{
     background: #363940;
 	font-family: montserrat;
+	color: #ffffff;
     width:100%;
     margin:0px;
     overflow:auto;
@@ -159,3 +160,25 @@ button, input[type="submit"], input[type="reset"] {
 	top: 80%;
 	left: 57%;
 }
+
+
+
+#about {
+	background: #FFFFFF;
+	padding-top: 12rem;
+	padding-bottom: 15rem;
+}
+#about .section-intro {
+	margin-bottom: 3rem;
+	margin-left: 3rem;
+}
+
+.intro-info {
+	position: relative;
+	margin-top: 1.5rem;
+	margin-right: -30px;
+	margin-left: -55px;
+}
+.intro-info .lead {
+	text-align: left;
+	padding-left: 6rem;
