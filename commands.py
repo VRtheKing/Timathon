@@ -1,66 +1,47 @@
-import speech_recognition as sr
-import speak
 from youtube3 import YoutubeClient
 import wikipedia
 from datetime import datetime
-import pyautogui
-
-pyautogui.moveTo(100, 200)
-pyautogui.moveTo(200, 300)
-
 from pywhatkit import playonyt, search
+import pyjokes
+
+
 
 now = datetime.now()
 
 
-listener = sr.Recognizer()
-
-#take_commands area
-def take_commands():
-        try:
-            with sr.Microphone() as source:
-                print('listening')
-                audio = listener.listen(source)
-                text  = listener.recognize_google(audio)
-                print(text)
-                return text
-        except Exception as e:
-            print(e)
-            speak.speak('retry')
-
 
 #speak_commands
 class speak_commands():
-    def __init__(self,command):
-        self.command = command
+    def speak(self, command):
+        command =command
         x = command
-
-
-
-        if 'youtube' in x:
-            x = self.command.replace('youtube','')
+        if 'YouTube' in x:
+            x = command.replace('YouTube','')
             play = 'playing'+ x
             print(play)
-            speak.speak(play)
             self.playonyt(x)
-        elif 'time' in x:
-            current_time = now.strftime("%H:%M")
-            speak.speak("Current Time is" + current_time)
+            return play
 
         elif 'search' in x:
-            x = self.command.replace('search','')
+            x = command.replace('search','')
             searching = 'searching' + x
             print(searching)
-            speak.speak(searching)
             search(x)
+            return searching
         elif 'Wikipedia' in x:
-            x = self.command.replace('Wikipedia', '')
+            x = command.replace('Wikipedia', '')
             try:
                 ans = wikipedia.summary(x, sentences = 1)
                 print(ans)
-                speak.speak(ans)
+                return ans
             except:
-                speak.speak('retry')
+                return 'retry'
+
+        elif 'joke' in x:
+            return pyjokes.get_joke()
+        else:
+            return 'retry'
+
 
 
     def playonyt(self,vid):

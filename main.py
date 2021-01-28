@@ -1,12 +1,12 @@
-from flask import Flask, redirect, url_for, render_template, request
+from flask import Flask, redirect, url_for, render_template, request, jsonify, make_response
 import backend_api
 import commands
-from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
 
 @app.route("/", methods=['POST','GET'])
 def home():
+
 	if request.method == 'POST':
 		x = request.form['text']
 		backend_api.start(x)
@@ -14,9 +14,15 @@ def home():
 
 @app.route("/speak", methods =['POST','GET'])
 def speak():
-	command = commands.take_commands()
-	speak = commands.speak_commands(command)
-	return redirect(url_for('home'))
+
+	req = request.get_json()
+	speaker = commands.speak_commands()
+	speak = speaker.speak(req)
+	print(req)
+
+	res = make_response(jsonify({"message":speak},200))
+
+	return res
 
 if __name__ == "__main__":
 	app.run(debug = True)
