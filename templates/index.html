@@ -38,10 +38,23 @@
       </form>
     </div>
 	</div>
+
   <img type="image" name="mic" class="mic" id="mike" src="../static/mic.png" height="300" width="250" >
   <img src="../static/fontT.png" height="300" width="250" class="fontt" id="texty">
   <h1 class="none" >{{message}}</h1>
 <script src = {{url_for('static', filename = "app2.js")}}>
+=======
+	<img type="image" name="mic" class="mic" id="mike" src="../static/mic.png" height="300" width="250" >
+	<div class="voice-commands">
+		<textarea id="text-command-area" rows="4" cols="50"></textarea>
+	</div>
+	<img src="../static/fontT.png" height="300" width="250" class="fontt" id="texty">
+	<div class="text-commands">
+		<textarea rows="4" cols="50"></textarea>
+	</div>
+	<h1 class="none" >{{message}}</h1>
+<script src = "../static/externaljs.js">
+
 </script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 Flask
 requests
-webbrowser
-BeautifulSoup
+BeautifulSoup4
 youtube3
 datetime
 pywhatkit
