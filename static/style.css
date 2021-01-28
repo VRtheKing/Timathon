@@ -8,7 +8,7 @@ body{
 	font-family: montserrat;
     width:100%;
     margin:0px;
-    overflow:hidden;
+    overflow:auto;
 }
 /*.bgimg{
   max-width: 100%;
@@ -139,4 +139,23 @@ button, input[type="submit"], input[type="reset"] {
 }
 .none{
   display: none;
+}
+
+.voice-commands{
+	display: relative;
+	flex-position: column;
+	position: fixed;
+	width: auto;
+	height: auto;
+	top: 80%;
+	left: 17%;
+}
+.text-commands{
+	display: relative;
+	flex-position: column;
+	position: fixed;
+	width: auto;
+	height: auto;
+	top: 80%;
+	left: 57%;
 }
