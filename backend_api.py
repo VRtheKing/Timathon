@@ -20,6 +20,18 @@ def searchonyt(x):
 def searchongoogle(x):
     return webbrowser.open(f'https://www.google.com/search?q={x}')
 
+def findsynonyms(x):
+    file = requests.get(f'https://www.google.com/search?q={x}')
+    soup = BeautifulSoup(file.text, 'html.parser')
+    div = soup.find('div')
+    print(div)
+
+def searchamazon(x):
+    return webbrowser.open(f'https://www.amazon.in/s?k={x}')
+
+def searchflip(x):
+    return webbrowser.open(f'https://www.flipkart.com/search?q={x}')
+
 #x = x.replace(' ' ,'+')
 #searchongoogle(x)
 def start(x):
@@ -34,3 +46,10 @@ def start(x):
     elif 'stack' in x:
         x = x.replace('stack', '')
         searchstack(x)
+    elif 'Amazon find' in x:
+        x = command.replace('Amazon find', '')
+        return searchamazon(x)
+
+    elif 'Flipkart find' in x:
+        x = command.replace('Flipkart find', '')
+        return searchflip(x)
